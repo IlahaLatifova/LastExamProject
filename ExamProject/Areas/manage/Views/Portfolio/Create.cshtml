@@ -1,0 +1,33 @@
+﻿@model PortfolioPostVm
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Portfolio Managment</h4>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input  class="form-control" asp-for="Name" placeholder="Enter Name ...">
+                    <span asp-validation-for="Name" style="color:darkred"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Type">Type</label>
+                    <input class="form-control" asp-for="Type" placeholder="Enter Type ...">
+                    <span asp-validation-for="Type" style="color:darkred"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <input class="form-control" asp-for="Description" placeholder="Enter Description ...">
+                    <span asp-validation-for="Description" style="color:darkred"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FormFile">Image</label>
+                    <input class="form-control" asp-for="FormFile" placeholder="Enter Description ...">
+                    <span asp-validation-for="FormFile" style="color:darkred"></span>
+                </div>
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <button class="btn btn-light" asp-area="manage" asp-controller="Portfolio" asp-action="Index">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

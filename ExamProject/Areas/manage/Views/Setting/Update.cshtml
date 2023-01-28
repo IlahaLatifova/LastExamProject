@@ -1,0 +1,35 @@
+﻿@model SettingUpdate
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Portfolio Managment</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label asp-for="@Model.SettingPost.IconText">IconText</label>
+                    <input class="form-control" asp-for="@Model.SettingPost.IconText" value="@Model.SettingGet.IconText">
+                    <span asp-validation-for="@Model.SettingPost.IconText" style="color:darkred"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.SettingPost.InstagraUrlm">Type</label>
+                    <input class="form-control" asp-for="@Model.SettingPost.InstagraUrlm" value="@Model.SettingGet.InstagraUrlm">
+                    <span asp-validation-for="@Model.SettingPost.InstagraUrlm" style="color:darkred"></span>
+                </div>
+                < <div class="form-group">
+                    <label asp-for="@Model.SettingPost.FacebookUrl">Type</label>
+                    <input class="form-control" asp-for="@Model.SettingPost.FacebookUrl" value="@Model.SettingGet.FacebookUrl">
+                    <span asp-validation-for="@Model.SettingPost.FacebookUrl" style="color:darkred"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.SettingPost.TwitterUrl">Type</label>
+                    <input class="form-control" asp-for="@Model.SettingPost.TwitterUrl" value="@Model.SettingGet.TwitterUrl">
+                    <span asp-validation-for="@Model.SettingPost.TwitterUrl" style="color:darkred"></span>
+                </div>
+                <input type="hidden" asp-for="@Model.SettingGet.Id"/>
+                <input type="hidden" asp-for="@Model.SettingGet.Id" />
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <button class="btn btn-light" asp-area="manage" asp-controller="Setting" asp-action="Index">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

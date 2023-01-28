@@ -1,0 +1,35 @@
+﻿@model PortfolioUpdateVm
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Portfolio Managment</h4>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="@Model.portfolioPost.Name">Name</label>
+                    <input class="form-control" asp-for="@Model.portfolioPost.Name" value="@Model.portfolioGet.Name">
+                    <span asp-validation-for="@Model.portfolioPost.Name" style="color:darkred"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.portfolioPost.Type">Type</label>
+                    <input class="form-control" asp-for="@Model.portfolioPost.Type" value="@Model.portfolioGet.Type">
+                    <span asp-validation-for="@Model.portfolioPost.Type" style="color:darkred"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.portfolioPost.Description">Description</label>
+                    <input class="form-control" asp-for="@Model.portfolioPost.Description" value="@Model.portfolioGet.Description">
+                    <span asp-validation-for="@Model.portfolioPost.Description" style="color:darkred"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.portfolioPost.FormFile">Image</label>
+                    <div class="mb-3" style="width:100px"><img src="~/assets/img/portfolio/@Model.portfolioGet.ImageUrl" style="max-width:100%"/></div>
+                    <input class="form-control" asp-for="@Model.portfolioPost.FormFile">
+                    <span asp-validation-for="@Model.portfolioPost.FormFile" style="color:darkred"></span>
+                </div>
+                <input type="hidden" asp-for="@Model.portfolioGet.Id" />
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <button class="btn btn-light" asp-area="manage" asp-controller="Portfolio" asp-action="Index">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
